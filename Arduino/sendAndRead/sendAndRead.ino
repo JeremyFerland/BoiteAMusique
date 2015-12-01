@@ -1,3 +1,6 @@
+// Jeremy Ferland inspiration du sketchbook NewPing15Sensors de la librairie NewPing et du sketchbook strandtest de la librairie Adafruit_NeoPixel 
+
+
 #include <NewPing.h>
 #include <Adafruit_NeoPixel.h>
 
@@ -40,26 +43,7 @@ void setup() {
     distanceTimer[i] = distanceTimer[i - 1] + distanceInterval;
   }
 }
-void colorWipe(uint32_t c, uint8_t wait) {
-  for(uint16_t i=0; i<strip1.numPixels(); i++) {
-      strip1.setPixelColor(i, c);
-      strip1.show();
-  }
-}
-void echoCheck() { // If ping received, set the sensor distance to array.
-  if (distanceSensor[currentDistance].check_timer())
-    distanceStore[currentDistance] = distanceSensor[currentDistance].ping_result / US_ROUNDTRIP_CM;
-}
 
-void oneSensorCycle() { // Sensor ping cycle complete, do something with the results.
-  // The following code would be replaced with your code that does something with the ping results.
-  for (uint8_t i = 0; i < numberOfDistanceSensor; i++) {
-    Serial.print(i);
-    Serial.print("=");
-    Serial.print(distanceStore[i]);
-    Serial.println("cm ");
-  }
-}
 void loop() {
   
   //colorWipe(strip1.Color(255, 0, 0), 50);
@@ -83,7 +67,25 @@ void loop() {
   }
 }
 
-long microsecondsToCentimeters(long microseconds){
-  return microseconds/29/2;  
+void colorWipe(uint32_t c, uint8_t wait) {
+  for(uint16_t i=0; i<strip1.numPixels(); i++) {
+      strip1.setPixelColor(i, c);
+      strip1.show();
+  }
+}
+
+void echoCheck() { // If ping received, set the sensor distance to array.
+  if (distanceSensor[currentDistance].check_timer())
+    distanceStore[currentDistance] = distanceSensor[currentDistance].ping_result / US_ROUNDTRIP_CM;
+}
+
+void oneSensorCycle() { // Sensor ping cycle complete, do something with the results.
+  // The following code would be replaced with your code that does something with the ping results.
+  for (uint8_t i = 0; i < numberOfDistanceSensor; i++) {
+    Serial.print(i);
+    Serial.print("=");
+    Serial.print(distanceStore[i]);
+    Serial.println("cm ");
+  }
 }
 
