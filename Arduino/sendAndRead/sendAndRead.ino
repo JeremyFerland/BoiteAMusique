@@ -1,17 +1,10 @@
 // Jeremy Ferland inspiration du sketchbook NewPing15Sensors de la librairie NewPing et du sketchbook strandtest de la librairie Adafruit_NeoPixel 
 
-
 #include <NewPing.h>
-#include <Adafruit_NeoPixel.h>
-
-
-const int pinLED1 = 4;
-const int nbLED1 = 60;
-Adafruit_NeoPixel strip1 = Adafruit_NeoPixel(nbLED1, pinLED1, NEO_GRB + NEO_KHZ800);
 
 const int numberOfDistanceSensor = 12;
-const int maxDistanceDistance = 300;
-const int distanceInterval = 100;
+const int maxDistanceDistance = 50;  
+const int distanceInterval = 200;
 
 unsigned long distanceTimer[numberOfDistanceSensor];
 unsigned int distanceStore[numberOfDistanceSensor];
@@ -32,29 +25,22 @@ NewPing distanceSensor [numberOfDistanceSensor] = {
   NewPing(25,26,maxDistanceDistance)
 };
 
-
 void setup() {
   // put your setup code here, to run once:
-  Serial.begin(9600);
-  strip1.begin();
-  strip1.show();
-  colorWipe(strip1.Color(0, 255, 0), 50);
+  Serial.begin(57600);
   for (uint8_t i = 1; i < numberOfDistanceSensor; i++){ // Set the starting time for each sensor.
     distanceTimer[i] = distanceTimer[i - 1] + distanceInterval;
   }
 }
 
 void loop() {
-  
-  //colorWipe(strip1.Color(255, 0, 0), 50);
-  // put your main code here, to run repeatedly:
-   for (int x = 0; x < 16 ; x++){
+  for (int x = 0; x < 16 ; x++){
     Serial.print("plancher");
     Serial.print(x);
     Serial.print(" ");
     Serial.println(analogRead(x));
   }
-
+  
   for (uint8_t i = 0; i < numberOfDistanceSensor; i++) { // Loop through all the sensors.
     if (millis() >= distanceTimer[i]) {         // Is it this sensor's time to ping?
       distanceTimer[i] += distanceInterval * numberOfDistanceSensor;  // Set next time this sensor will be pinged.
@@ -62,15 +48,8 @@ void loop() {
       distanceSensor[currentDistance].timer_stop();          // Make sure previous timer is canceled before starting a new ping (insurance).
       currentDistance = i;                          // Sensor being accessed.
       distanceStore[currentDistance] = 0;                      // Make distance zero in case there's no ping echo for this sensor.
-      distanceSensor[currentDistance].ping_timer(echoCheck); // Do the ping (processing continues, interrupt will call echoCheck to look for echo).
+      //distanceSensor[currentDistance].ping_timer(echoCheck); // Do the ping (processing continues, interrupt will call echoCheck to look for echo).
     }
-  }
-}
-
-void colorWipe(uint32_t c, uint8_t wait) {
-  for(uint16_t i=0; i<strip1.numPixels(); i++) {
-      strip1.setPixelColor(i, c);
-      strip1.show();
   }
 }
 
