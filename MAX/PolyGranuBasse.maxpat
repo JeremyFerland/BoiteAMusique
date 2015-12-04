@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 102.0, 105.0, 842.0, 586.0 ],
+		"rect" : [ 107.0, 105.0, 842.0, 586.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -45,7 +45,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 747.0, 304.0, 140.0, 22.0 ],
 					"style" : "",
-					"text" : "if $i1 >= 3020 then bang"
+					"text" : "if $i1 >= 3900 then bang"
 				}
 
 			}
@@ -493,7 +493,7 @@
 					"numinlets" : 5,
 					"numoutlets" : 6,
 					"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-					"patching_rect" : [ 203.5, 304.0, 256.0, 64.0 ],
+					"patching_rect" : [ 203.5, 297.0, 256.0, 64.0 ],
 					"setmode" : 2,
 					"style" : ""
 				}
@@ -511,7 +511,7 @@
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 298.0, 463.0, 86.0, 22.0 ],
 					"style" : "",
-					"text" : "poly~ grain 20"
+					"text" : "poly~ grain 50"
 				}
 
 			}
