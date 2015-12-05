@@ -94,10 +94,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
-					"outlettype" : [ "", "int" ],
-					"patching_rect" : [ 142.0, 183.0, 30.0, 22.0 ],
+					"outlettype" : [ "", "bang" ],
+					"patching_rect" : [ 308.0, 163.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "t l 0"
+					"text" : "t l bang"
 				}
 
 			}
