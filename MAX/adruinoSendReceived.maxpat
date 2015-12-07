@@ -475,7 +475,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 2255.0, 359.0, 142.0, 22.0 ],
 					"style" : "",
-					"text" : "if $i1 > 800 then 1 else 0"
+					"text" : "if $i1 > 100 then 1 else 0"
 				}
 
 			}
@@ -919,7 +919,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 323.0, 701.0, 252.0, 60.0 ],
+						"rect" : [ 705.0, 525.0, 166.0, 39.0 ],
 						"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
@@ -2032,7 +2032,7 @@
 					"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "" ],
 					"patching_rect" : [ 50.0, 313.0, 2371.0, 22.0 ],
 					"style" : "",
-					"text" : "route distance0 distance1 distance2 distance3 distance4 distance5 distance6 distance7 distance8 distance9 distance10 distance11 distance12 distance13 distance14 distance15"
+					"text" : "route plancher0 plancher1 plancher2 plancher3 plancher4 plancher5 plancher6 plancher7 plancher8 plancher9 plancher10 plancher11 plancher12 plancher13 plancher14 plancher15"
 				}
 
 			}
@@ -2421,7 +2421,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ -645.0, 151.0, 252.0, 61.0 ],
+						"rect" : [ 60.0, 158.0, 166.0, 39.0 ],
 						"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,

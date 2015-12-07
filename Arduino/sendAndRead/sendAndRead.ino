@@ -28,7 +28,7 @@ void setup() {
 
 void loop() {
   for (int x = 0; x < 16 ; x++){
-    Serial.print("distance");
+    Serial.print("plancher");
     Serial.print(x);
     Serial.print(" ");
     Serial.println(analogRead(x));
