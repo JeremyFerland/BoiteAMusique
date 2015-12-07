@@ -2,59 +2,94 @@
 #include <Adafruit_NeoPixel.h>
 
 Messenger message = Messenger();
-const int numberOfLEDStrip = 6;
-const int pinLED[numberOfLEDStrip] = {4,5,6,7,8,9};
-const int nbLED[numberOfLEDStrip] = {60,60,60,60,60,60};
+const int numberOfLEDStrip = 3;
+const int pinLED[numberOfLEDStrip] = {4, 5, 6};
+const int nbLED[numberOfLEDStrip] = {180, 1, 1};
 
 Adafruit_NeoPixel strip[numberOfLEDStrip] = {
   Adafruit_NeoPixel(nbLED[0], pinLED[0], NEO_GRB + NEO_KHZ800),
   Adafruit_NeoPixel(nbLED[1], pinLED[1], NEO_GRB + NEO_KHZ800),
   Adafruit_NeoPixel(nbLED[2], pinLED[2], NEO_GRB + NEO_KHZ800),
-  Adafruit_NeoPixel(nbLED[3], pinLED[0], NEO_GRB + NEO_KHZ800),
-  Adafruit_NeoPixel(nbLED[4], pinLED[1], NEO_GRB + NEO_KHZ800),
-  Adafruit_NeoPixel(nbLED[5], pinLED[2], NEO_GRB + NEO_KHZ800)
 };
 uint32_t color[] = {
-  strip[0].Color(0,0,0),
-  strip[0].Color(0,0,0),
-  strip[0].Color(0,0,0),
-  strip[0].Color(0,0,0),
-  strip[0].Color(0,0,0),
-  strip[0].Color(0,0,0),
-  strip[0].Color(0,0,0)
+  strip[0].Color(0, 0, 0),
+  strip[0].Color(255, 255, 255),
+  strip[0].Color(255, 0, 0)
 };
+boolean empty = true;
 
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(57600);
-  for( int i = 0 ; i < numberOfLEDStrip ; i++){
+  for ( int i = 0 ; i < numberOfLEDStrip ; i++) {
     strip[i].begin();
     strip[i].show();
   }
   message.attach(messageReceived);
 }
-
+int counter;
 void loop() {
-  while ( Serial.available( ) > 0 ) {
-    message.process( Serial.read( ) );
+
+  if (empty) {
+    for (int x = 0; x < numberOfLEDStrip; x++) {
+      for ( uint16_t i = 0 ; i < 60 ; i++) {
+        if ((i+counter)%10 < 5) {
+          strip[x].setPixelColor(i, color[1]);
+          
+        } else {
+          strip[x].setPixelColor(i, color[0]);
+        }
+      }
+      strip[x].show();
+    }
+    
+    counter ++;
+    delay(100);
   }
+  
+   /*if ( Serial.available( ) > 0 ) {
+      message.process( Serial.read( ) );
+    }*/
 }
 
 void messageReceived() {
   String messageToTest;
   char charBuffer[50];
-  for (int i = 0 ; i < numberOfLEDStrip; i++){
-    messageToTest = "color" + String(i) ;
-    messageToTest.toCharArray(charBuffer,50);
-    if ( message.checkString(charBuffer)) {  
-      int value = message.readInt(); 
-      colorWipe(color[value], 0 , strip[i]);
-   }
+  empty = false;
+  for (int x = 0 ; x < 4; x++) {
+    for (int y = 0; y < 4; y++) {
+      messageToTest = "pression" + String(x+1) + String(y+1);
+      messageToTest.toCharArray(charBuffer, 50);
+      if ( message.checkString(charBuffer)) {
+        int value = message.readInt();
+        colorOfEachSquare (x, y, color[value]);
+      }
+    }
+  }
+  if (message.checkString("empty")) {
+    empty = true;
   }
 }
 
 void colorWipe(uint32_t c, uint8_t wait, Adafruit_NeoPixel currentStrip) {
-  for(uint16_t i=0; i<currentStrip.numPixels(); i++) {
-      currentStrip.setPixelColor(i,c);
+  for (uint16_t i = 0; i < currentStrip.numPixels(); i++) {
+    currentStrip.setPixelColor(i, c);
+    currentStrip.show();
   }
+}
+
+void colorOfEachSquare( int row, int column , uint32_t c) {
+  for ( int x = 0; x < 15; x++) {
+    if (column == 0) {
+      strip[column].setPixelColor(x + (row * 15), c);
+    } else if (column == 3) {
+      strip[column - 1].setPixelColor(x + (row * 15), c);
+    } else {
+      strip[column].setPixelColor(x + (row * 15), c);
+      strip[column - 1].setPixelColor(x + (row * 15), c);
+    }
+
+  }
+
+
 }

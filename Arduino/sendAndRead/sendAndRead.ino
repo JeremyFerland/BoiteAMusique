@@ -2,9 +2,9 @@
 
 #include <NewPing.h>
 
-const int numberOfDistanceSensor = 12;
-const int maxDistanceDistance = 50;  
-const int distanceInterval = 200;
+const int numberOfDistanceSensor = 5;
+const int maxDistanceDistance = 1000;  
+const int distanceInterval = 50;
 
 unsigned long distanceTimer[numberOfDistanceSensor];
 unsigned int distanceStore[numberOfDistanceSensor];
@@ -15,14 +15,7 @@ NewPing distanceSensor [numberOfDistanceSensor] = {
   NewPing(4,5,maxDistanceDistance),
   NewPing(6,7,maxDistanceDistance),
   NewPing(8,9,maxDistanceDistance),
-  NewPing(10,11,maxDistanceDistance),
-  NewPing(12,14,maxDistanceDistance),
-  NewPing(15,16,maxDistanceDistance),
-  NewPing(17,18,maxDistanceDistance),
-  NewPing(19,20,maxDistanceDistance),
-  NewPing(21,22,maxDistanceDistance),
-  NewPing(23,24,maxDistanceDistance),
-  NewPing(25,26,maxDistanceDistance)
+  NewPing(10,11,maxDistanceDistance)
 };
 
 void setup() {
@@ -34,12 +27,12 @@ void setup() {
 }
 
 void loop() {
-  for (int x = 0; x < 16 ; x++){
+  /*for (int x = 0; x < 16 ; x++){
     Serial.print("plancher");
     Serial.print(x);
     Serial.print(" ");
     Serial.println(analogRead(x));
-  }
+  }*/
   
   for (uint8_t i = 0; i < numberOfDistanceSensor; i++) { // Loop through all the sensors.
     if (millis() >= distanceTimer[i]) {         // Is it this sensor's time to ping?
@@ -48,7 +41,7 @@ void loop() {
       distanceSensor[currentDistance].timer_stop();          // Make sure previous timer is canceled before starting a new ping (insurance).
       currentDistance = i;                          // Sensor being accessed.
       distanceStore[currentDistance] = 0;                      // Make distance zero in case there's no ping echo for this sensor.
-      //distanceSensor[currentDistance].ping_timer(echoCheck); // Do the ping (processing continues, interrupt will call echoCheck to look for echo).
+      distanceSensor[currentDistance].ping_timer(echoCheck); // Do the ping (processing continues, interrupt will call echoCheck to look for echo).
     }
   }
 }
