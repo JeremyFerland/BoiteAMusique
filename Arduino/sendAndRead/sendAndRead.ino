@@ -27,12 +27,13 @@ void setup() {
 }
 
 void loop() {
-  /*for (int x = 0; x < 16 ; x++){
-    Serial.print("plancher");
+  for (int x = 0; x < 16 ; x++){
+    Serial.print("distance");
     Serial.print(x);
     Serial.print(" ");
     Serial.println(analogRead(x));
-  }*/
+  }
+ 
   
   for (uint8_t i = 0; i < numberOfDistanceSensor; i++) { // Loop through all the sensors.
     if (millis() >= distanceTimer[i]) {         // Is it this sensor's time to ping?

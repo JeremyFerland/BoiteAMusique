@@ -47,9 +47,9 @@ void loop() {
     delay(100);
   }
   
-   /*if ( Serial.available( ) > 0 ) {
+   if ( Serial.available( ) > 0 ) {
       message.process( Serial.read( ) );
-    }*/
+    }
 }
 
 void messageReceived() {
