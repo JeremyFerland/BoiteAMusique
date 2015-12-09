@@ -43,9 +43,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 931.5, 472.0, 75.0, 22.0 ],
+					"patching_rect" : [ 931.5, 472.0, 68.0, 22.0 ],
 					"style" : "",
-					"text" : "random 127"
+					"text" : "random 50"
 				}
 
 			}
@@ -56,9 +56,9 @@
 					"numinlets" : 6,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 931.5, 512.0, 113.0, 22.0 ],
+					"patching_rect" : [ 931.5, 512.0, 107.0, 22.0 ],
 					"style" : "",
-					"text" : "scale 0 127 -70. -6."
+					"text" : "scale 0 51 -10. -1."
 				}
 
 			}
@@ -287,7 +287,7 @@
 			}
 , 			{
 				"box" : 				{
-					"addpoints" : [ 0.0, 0.0, 0, 18.882946, 0.48997, 0, 98.67018, 0.143303, 0, 205.851064, 0.133333, 0, 300.375, 0.0, 0 ],
+					"addpoints" : [ 0.0, 0.0, 0, 18.882946, 1.0, 0, 122.606351, 0.823303, 0, 227.925499, 0.556637, 0, 300.375, 0.0, 0 ],
 					"domain" : 300.0,
 					"id" : "obj-72",
 					"maxclass" : "function",
