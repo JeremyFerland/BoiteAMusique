@@ -3,7 +3,7 @@
 #include <NewPing.h>
 
 const int numberOfDistanceSensor = 5;
-const int maxDistanceDistance = 1000;  
+const int maxDistanceDistance = 30;  
 const int distanceInterval = 50;
 
 unsigned long distanceTimer[numberOfDistanceSensor];
@@ -11,11 +11,11 @@ unsigned int distanceStore[numberOfDistanceSensor];
 uint8_t currentDistance = 0;
 
 NewPing distanceSensor [numberOfDistanceSensor] = {
-  NewPing(2,3,maxDistanceDistance),
-  NewPing(4,5,maxDistanceDistance),
-  NewPing(6,7,maxDistanceDistance),
-  NewPing(8,9,maxDistanceDistance),
-  NewPing(10,11,maxDistanceDistance)
+  NewPing(30,31,maxDistanceDistance),
+  NewPing(32,33,maxDistanceDistance),
+  NewPing(34,35,maxDistanceDistance),
+  NewPing(36,37,maxDistanceDistance),
+  NewPing(38,39,maxDistanceDistance)
 };
 
 void setup() {
