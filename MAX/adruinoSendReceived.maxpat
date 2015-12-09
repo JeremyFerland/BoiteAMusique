@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 1100.0, 703.0 ],
+		"rect" : [ 35.0, 79.0, 926.0, 614.0 ],
 		"bgcolor" : [ 0.862745, 0.870588, 0.878431, 1.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
@@ -46,7 +46,7 @@
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1645.0, 725.0, 30.0, 30.0 ],
+					"patching_rect" : [ 1634.0, 819.0, 30.0, 30.0 ],
 					"style" : "",
 					"varname" : "Empty"
 				}
@@ -1465,7 +1465,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 654.0, 691.0, 335.0, 80.0 ],
+						"rect" : [ 162.0, 602.0, 335.0, 80.0 ],
 						"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
@@ -1991,7 +1991,7 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-19",
-									"items" : [ "(serial", "port)", ",", "Bluetooth-Incoming-Port", ",", "Bluetooth-Modem" ],
+									"items" : [ "(serial", "port)", ",", "Bluetooth-Incoming-Port", ",", "UEBOOMDAMIEN-LWACP-1", ",", "Bluetooth-Modem", ",", "usbmodemfd121" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -2967,7 +2967,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ -636.0, -42.0, 335.0, 80.0 ],
+						"rect" : [ -1128.0, -131.0, 335.0, 80.0 ],
 						"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
@@ -3493,7 +3493,7 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-19",
-									"items" : [ "(serial", "port)", ",", "Bluetooth-Incoming-Port", ",", "Bluetooth-Modem" ],
+									"items" : [ "(serial", "port)", ",", "Bluetooth-Incoming-Port", ",", "UEBOOMDAMIEN-LWACP-1", ",", "Bluetooth-Modem", ",", "usbmodemfd121" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -5441,10 +5441,6 @@
 
 			}
  ],
-		"parameters" : 		{
-
-		}
-,
 		"dependency_cache" : [  ],
 		"embedsnapshot" : 0
 	}
