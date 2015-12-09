@@ -4,7 +4,7 @@
 
 const int numberOfDistanceSensor = 5;
 const int maxDistanceDistance = 30;  
-const int distanceInterval = 50;
+const int distanceInterval = 100;
 
 unsigned long distanceTimer[numberOfDistanceSensor];
 unsigned int distanceStore[numberOfDistanceSensor];

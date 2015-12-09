@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 0,
-			"revision" : 6,
-			"architecture" : "x86",
+			"revision" : 0,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 773.0, 79.0, 861.0, 480.0 ],
+		"rect" : [ 545.0, 79.0, 861.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,19 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"comment" : "",
+					"id" : "obj-15",
+					"maxclass" : "inlet",
+					"numinlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 169.0, 65.0, 30.0, 30.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-16",
 					"maxclass" : "comment",
@@ -246,7 +259,7 @@
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
-					"outlettype" : [ "signal" ],
+					"outlettype" : [ "" ],
 					"patching_rect" : [ 409.0, 65.0, 30.0, 30.0 ],
 					"style" : ""
 				}
@@ -280,24 +293,6 @@
 			}
  ],
 		"lines" : [ 			{
-				"patchline" : 				{
-					"destination" : [ "obj-10", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-1", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-11", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-1", 0 ]
-				}
-
-			}
-, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
 					"disabled" : 0,
@@ -357,6 +352,24 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-14", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-10", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-15", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-15", 0 ]
 				}
 
 			}
