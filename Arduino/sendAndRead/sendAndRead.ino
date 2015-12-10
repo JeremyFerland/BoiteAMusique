@@ -4,7 +4,7 @@
 
 const int numberOfDistanceSensor = 5;
 const int maxDistanceDistance = 30;  
-const int distanceInterval = 100;
+const int distanceInterval = 50;
 
 unsigned long distanceTimer[numberOfDistanceSensor];
 unsigned int distanceStore[numberOfDistanceSensor];
@@ -12,10 +12,10 @@ uint8_t currentDistance = 0;
 
 NewPing distanceSensor [numberOfDistanceSensor] = {
   NewPing(30,31,maxDistanceDistance),
-  NewPing(32,33,maxDistanceDistance),
   NewPing(34,35,maxDistanceDistance),
-  NewPing(36,37,maxDistanceDistance),
-  NewPing(38,39,maxDistanceDistance)
+  NewPing(38,39,maxDistanceDistance),
+  NewPing(42,43,maxDistanceDistance),
+  NewPing(46,47,maxDistanceDistance)
 };
 
 void setup() {

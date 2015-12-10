@@ -13,7 +13,7 @@ Adafruit_NeoPixel strip[numberOfLEDStrip] = {
 };
 uint32_t color[] = {
   strip[0].Color(0, 0, 0),
-  strip[0].Color(255, 255, 255),
+  strip[0].Color(255, 255, 200),
   strip[0].Color(255, 0, 0)
 };
 boolean empty = true;
