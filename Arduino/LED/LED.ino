@@ -35,9 +35,20 @@ void loop() {
       for ( uint16_t i = 0 ; i < 60 ; i++) {
         if ((i + counter) % 10 < 5) {
           strip[x].setPixelColor(i, color[1]);
-
+          if ( Serial.available( ) > 0 ) {
+            message.process( Serial.read( ) );
+          }
+          if (!empty) {
+            break;
+          }
         } else {
           strip[x].setPixelColor(i, color[0]);
+          if ( Serial.available( ) > 0 ) {
+            message.process( Serial.read( ) );
+          }
+          if (!empty) {
+            break;
+          }
         }
       }
       strip[x].show();
@@ -60,14 +71,14 @@ void messageReceived() {
       messageToTest = "pressions" + String(x + 1) + String(y + 1);
       messageToTest.toCharArray(charBuffer, 50);
       if ( message.checkString(charBuffer)) {
-        if(empty){
-         for (int x = 0; x < numberOfLEDStrip; x++) {
+        if (empty) {
+          for (int x = 0; x < numberOfLEDStrip; x++) {
             colorWipe(color[0], 0, strip[x]);
+          }
+          empty = false;
+          delay(100);
         }
-        empty = false;
-        delay(100);
-        }
-        
+
         int value = message.readInt();
         colorOfEachSquare (x, y, color[value]);
       }
