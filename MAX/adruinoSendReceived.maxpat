@@ -1365,7 +1365,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1226.0, 359.0, 142.0, 22.0 ],
 					"style" : "",
-					"text" : "if $i1 > 700 then 1 else 0"
+					"text" : "if $i1 > 750 then 1 else 0"
 				}
 
 			}
@@ -1718,7 +1718,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 1040.0, 745.0, 252.0, 60.0 ],
+						"rect" : [ 808.0, 745.0, 252.0, 60.0 ],
 						"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
@@ -3219,7 +3219,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 72.0, 195.0, 252.0, 61.0 ],
+						"rect" : [ -160.0, 195.0, 252.0, 61.0 ],
 						"bgcolor" : [ 1.0, 1.0, 1.0, 0.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
