@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 35.0, 79.0, 909.0, 612.0 ],
+		"rect" : [ 71.0, 354.0, 909.0, 612.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -51,7 +51,9 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"annotation" : "Dry/Wet",
+					"comment" : "Dry/Wet",
+					"hint" : "Dry/Wet",
 					"id" : "obj-97",
 					"maxclass" : "inlet",
 					"numinlets" : 0,
@@ -64,7 +66,9 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"annotation" : "Diffusion",
+					"comment" : "Diffusion",
+					"hint" : "Diffusion",
 					"id" : "obj-83",
 					"maxclass" : "inlet",
 					"numinlets" : 0,
@@ -78,7 +82,9 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"annotation" : "Damping",
+					"comment" : "Damping",
+					"hint" : "Damping",
 					"id" : "obj-62",
 					"maxclass" : "inlet",
 					"numinlets" : 0,
@@ -92,7 +98,9 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"annotation" : "Decay time ",
+					"comment" : "Decay time ",
+					"hint" : "Decay time ",
 					"id" : "obj-15",
 					"maxclass" : "inlet",
 					"numinlets" : 0,
@@ -106,7 +114,9 @@
 			}
 , 			{
 				"box" : 				{
-					"comment" : "",
+					"annotation" : "Size",
+					"comment" : "Size",
+					"hint" : "Size",
 					"id" : "obj-3",
 					"maxclass" : "inlet",
 					"numinlets" : 0,
@@ -495,7 +505,7 @@
 					"outlettype" : [ "signal", "signal", "", "float", "list" ],
 					"parameter_enable" : 1,
 					"patching_rect" : [ 635.0, 683.5, 136.0, 38.0 ],
-					"presentation_rect" : [ 625.0, 692.5, 50.0, 38.0 ],
+					"presentation_rect" : [ 625.0, 692.5, 50.0, 24.0 ],
 					"prototypename" : "mono_H",
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
@@ -5074,9 +5084,9 @@
  ],
 		"parameters" : 		{
 			"obj-150" : [ "live.gain~[3]", "Preprocess", 0 ],
-			"obj-128" : [ "live.gain~[2]", "Postprocess", 0 ],
+			"obj-5" : [ "live.gain~[12]", "live.gain~", 0 ],
 			"obj-68" : [ "live.gain~[11]", "live.gain~", 0 ],
-			"obj-5" : [ "live.gain~[12]", "live.gain~", 0 ]
+			"obj-128" : [ "live.gain~[2]", "Postprocess", 0 ]
 		}
 ,
 		"dependency_cache" : [  ],
