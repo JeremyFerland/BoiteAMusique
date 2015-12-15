@@ -1,3 +1,5 @@
+// Jeremy Ferland inspiration du sketchbook strandtest de la librairie Adafruit_NeoPixel 
+
 #include <Messenger.h>
 #include <Adafruit_NeoPixel.h>
 
@@ -21,6 +23,7 @@ boolean empty = true;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(57600);
+  // put all LED to off
   for ( int i = 0 ; i < numberOfLEDStrip ; i++) {
     strip[i].begin();
     strip[i].show();
@@ -30,16 +33,16 @@ void setup() {
 int counter;
 void loop() {
 
-  if (empty) {
+  if (empty) { // if no one on the box, do the automatic show
     for (int x = 0; x < numberOfLEDStrip; x++) {
       for ( uint16_t i = 0 ; i < 60 ; i++) {
-        if ((i + counter) % 10 < 5) {
+        if ((i + counter) % 10 < 5) { // 10 is for 5 white and 5 black
           strip[x].setPixelColor(i, color[1]);
           if ( Serial.available( ) > 0 ) {
             message.process( Serial.read( ) );
           }
           if (!empty) {
-            break;
+            break; // break if empty change, so no need to finish the for
           }
         } else {
           strip[x].setPixelColor(i, color[0]);
@@ -47,14 +50,14 @@ void loop() {
             message.process( Serial.read( ) );
           }
           if (!empty) {
-            break;
+            break;// break if empty change, so no need to finish the for
           }
         }
       }
       strip[x].show();
     }
 
-    counter ++;
+    counter ++; // change the start, it will appear like a movement
     delay(100);
   }
 
@@ -72,7 +75,7 @@ void messageReceived() {
       messageToTest.toCharArray(charBuffer, 50);
       if ( message.checkString(charBuffer)) {
         if (empty) {
-          for (int x = 0; x < numberOfLEDStrip; x++) {
+          for (int x = 0; x < numberOfLEDStrip; x++) { // clean all data
             colorWipe(color[0], 0, strip[x]);
           }
           empty = false;
@@ -80,7 +83,7 @@ void messageReceived() {
         }
 
         int value = message.readInt();
-        colorOfEachSquare (x, y, color[value]);
+        colorOfEachSquare (x, y, color[value]); // put section on or off
       }
     }
   }
@@ -90,13 +93,13 @@ void messageReceived() {
 }
 
 void colorWipe(uint32_t c, uint8_t wait, Adafruit_NeoPixel currentStrip) {
-  for (uint16_t i = 0; i < currentStrip.numPixels(); i++) {
+  for (uint16_t i = 0; i < currentStrip.numPixels(); i++) { // wipe all the strip
     currentStrip.setPixelColor(i, c);
     currentStrip.show();
   }
 }
 
-void colorOfEachSquare( int column, int row , uint32_t c) {
+void colorOfEachSquare( int column, int row , uint32_t c) { // put withe or black the LED for one section
   for ( int x = 0; x < 15; x++) {
     if (column == 0) {
       strip[column].setPixelColor(x + (row * 15), c);

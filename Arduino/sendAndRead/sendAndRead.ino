@@ -27,7 +27,7 @@ void setup() {
 }
 
 void loop() {
-  for (int x = 0; x < 16 ; x++){
+  for (int x = 0; x < 16 ; x++){ // print val of the floor sensor
     Serial.print("plancher");
     Serial.print(x);
     Serial.print(" ");
