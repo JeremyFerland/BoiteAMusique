@@ -6,7 +6,10 @@
 Messenger message = Messenger();
 const int numberOfLEDStrip = 3;
 const int pinLED[numberOfLEDStrip] = {4, 6, 8};
+const int pinLEDPassive= 10;
 const int nbLED[numberOfLEDStrip] = {60, 60, 60};
+
+Adafruit_NeoPixel stripPassive = Adafruit_NeoPixel(60, pinLEDPassive, NEO_GRB + NEO_KHZ800);
 
 Adafruit_NeoPixel strip[numberOfLEDStrip] = {
   Adafruit_NeoPixel(nbLED[0], pinLED[0], NEO_GRB + NEO_KHZ800),
@@ -28,6 +31,10 @@ void setup() {
     strip[i].begin();
     strip[i].show();
   }
+  stripPassive.begin();
+  stripPassive.show();
+  colorWipe(color[2], 0, stripPassive);
+  
   message.attach(messageReceived);
 }
 int counter;
