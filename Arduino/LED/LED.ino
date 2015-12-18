@@ -18,8 +18,9 @@ Adafruit_NeoPixel strip[numberOfLEDStrip] = {
 };
 uint32_t color[] = {
   strip[0].Color(0, 0, 0),
-  strip[0].Color(255, 255, 200),
-  strip[0].Color(255, 0, 0)
+  strip[0].Color(205, 205, 150),
+  strip[0].Color(255, 0, 0),
+  strip[0].Color(0, 255, 0),
 };
 boolean empty = true;
 
@@ -44,13 +45,13 @@ void loop() {
     for (int x = 0; x < numberOfLEDStrip; x++) {
       for ( uint16_t i = 0 ; i < 60 ; i++) {
         if ((i + counter) % 10 < 5) { // 10 is for 5 white and 5 black
-          strip[x].setPixelColor(i, color[1]);
           if ( Serial.available( ) > 0 ) {
             message.process( Serial.read( ) );
           }
           if (!empty) {
             break; // break if empty change, so no need to finish the for
           }
+          strip[x].setPixelColor(i, color[1]);
         } else {
           strip[x].setPixelColor(i, color[0]);
           if ( Serial.available( ) > 0 ) {
@@ -84,6 +85,7 @@ void messageReceived() {
         if (empty) {
           for (int x = 0; x < numberOfLEDStrip; x++) { // clean all data
             colorWipe(color[0], 0, strip[x]);
+            colorWipe(color[2], 0, stripPassive);
           }
           empty = false;
           delay(100);
@@ -96,6 +98,7 @@ void messageReceived() {
   }
   if (message.checkString("empty")) {
     empty = true;
+    colorWipe(color[3], 0, stripPassive);
   }
 }
 
