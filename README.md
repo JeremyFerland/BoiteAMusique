@@ -23,7 +23,7 @@ Marche à suivre
 
 - Mettre le son sur la bonne sortie audio. (Dans notre cas, les 2 premières sorties audio servent pour les écouteurs et les 4 d'après pour les 4 speakers an 4.0) **! Seulement 4 sorties à cause du commit perdu !**
 
-- Activer le toggle des écouteurs et/ou des speakers pour les activer ** ! Non applicable à cause du commit manquant !**
+- Activer le toggle des écouteurs et/ou des speakers pour les activer **! Non applicable à cause du commit manquant !**
 
 
 Nous avons oublié de faire le dernier commit lors de la représentation, il manque donc le son qui se déclenche sur les tuiles avec un pied rouge dessus. Ainsi que l'ajout de 2 sorties audio pour les écouteurs.
