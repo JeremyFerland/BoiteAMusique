@@ -1,4 +1,4 @@
-# BoiteAMusique
+# BoiteAMusique par Jérémy Ferland et Charles-Olivier Belanger
 
 Automne 2015 EDM4620-10 UQAM 
 ==============
@@ -21,9 +21,9 @@ Marche à suivre
 
 - S'assurer de recevoir les données des sensors ultradonic (voir chiffre des cordes)
 
-- Mettre le son sur la bonne sorti audio. (Dans notre cas, les 2 premières sorti audio servent pour les écouteur et les 4 d'après pour les 4 speaker an 4.0) **Seulement 4 sorti à cause du commit perdu**
+- Mettre le son sur la bonne sorti audio. (Dans notre cas, les 2 premières sorti audio servent pour les écouteur et les 4 d'après pour les 4 speaker an 4.0) **! Seulement 4 sorti à cause du commit perdu !**
 
-- Activer le toggle des écouteurs et/ou des speakers pour les activer **non applicable à cause du commit manquant**
+- Activer le toggle des écouteurs et/ou des speakers pour les activer ** ! Non applicable à cause du commit manquant !**
 
 
 Nous avons oublié de faire le dernier commit lors de la représentation, ils manquent donc les son qui se déclenche sur les tuiles avec un pied rouge dessus. Ainsi que l'ajout du de 2 sorti audio pour les écouteurs.
