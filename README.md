@@ -27,3 +27,13 @@ Marche à suivre
 
 
 Nous avons oublié de faire le dernier commit lors de la représentation, ils manquent donc les son qui se déclenche sur les tuiles avec un pied rouge dessus.
+
+Les 3 composantes demandées 
+--------------
+
+- Déclenchement/lecture de fichiers sons
+    - Un son de trompette que nous avons enregistré qui passe ensuite dans un granulateur
+- Éléments génératifs  (ordi qui joue (fait) quelque chose de lui-même) et synthèse (indiquez le/les type(s) de synthèse utilisée(s)
+    - Nous avons fait de la granulation et de la Synthèse AM
+- Traitement temps réel
+    - Nous avons des filtres, du delay, de l'overdrive et de la reverb
