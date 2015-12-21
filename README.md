@@ -1,6 +1,6 @@
 # BoiteAMusique
 
-Boite à musique
+Automne 2015 EDM4620-10 UQAM 
 ==============
 
 Marche à suivre
