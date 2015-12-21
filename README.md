@@ -15,18 +15,18 @@ Marche à suivre
 
 - Brancher les 2 arduinos
 
-- Activé les 2 arduinos
+- Activer les 2 arduinos
 
 - S'assurer de recevoir des données sur le plancher (voir chiffre et toggle)
 
-- S'assurer de recevoir les données des sensors ultradonic (voir chiffre des cordes)
+- S'assurer de recevoir les données des sensors ultrasonic (voir chiffre des cordes)
 
-- Mettre le son sur la bonne sorti audio. (Dans notre cas, les 2 premières sorti audio servent pour les écouteur et les 4 d'après pour les 4 speaker an 4.0) **! Seulement 4 sorti à cause du commit perdu !**
+- Mettre le son sur la bonne sortie audio. (Dans notre cas, les 2 premières sorties audio servent pour les écouteurs et les 4 d'après pour les 4 speakers an 4.0) **! Seulement 4 sorties à cause du commit perdu !**
 
 - Activer le toggle des écouteurs et/ou des speakers pour les activer ** ! Non applicable à cause du commit manquant !**
 
 
-Nous avons oublié de faire le dernier commit lors de la représentation, ils manquent donc les son qui se déclenche sur les tuiles avec un pied rouge dessus. Ainsi que l'ajout du de 2 sorti audio pour les écouteurs.
+Nous avons oublié de faire le dernier commit lors de la représentation, il manque donc le son qui se déclenche sur les tuiles avec un pied rouge dessus. Ainsi que l'ajout de 2 sorties audio pour les écouteurs.
 
 Les 3 composantes demandées 
 --------------
