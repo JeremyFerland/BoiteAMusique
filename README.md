@@ -21,12 +21,12 @@ Marche à suivre
 
 - S'assurer de recevoir les données des sensors ultradonic (voir chiffre des cordes)
 
-- Mettre le son sur la bonne sorti audio. (Dans notre cas, les 2 premières sorti audio servent pour les écouteur et les 4 d'après pour les 4 speaker an 4.0)
+- Mettre le son sur la bonne sorti audio. (Dans notre cas, les 2 premières sorti audio servent pour les écouteur et les 4 d'après pour les 4 speaker an 4.0) **Seulement 4 sorti à cause du commit perdu**
 
-- Activer le toggle des écouteurs et/ou des speakers pour les activer
+- Activer le toggle des écouteurs et/ou des speakers pour les activer **non applicable à cause du commit manquant**
 
 
-Nous avons oublié de faire le dernier commit lors de la représentation, ils manquent donc les son qui se déclenche sur les tuiles avec un pied rouge dessus.
+Nous avons oublié de faire le dernier commit lors de la représentation, ils manquent donc les son qui se déclenche sur les tuiles avec un pied rouge dessus. Ainsi que l'ajout du de 2 sorti audio pour les écouteurs.
 
 Les 3 composantes demandées 
 --------------
