@@ -24,3 +24,6 @@ Marche à suivre
 - Mettre le son sur la bonne sorti audio. (Dans notre cas, les 2 premières sorti audio servent pour les écouteur et les 4 d'après pour les 4 speaker an 4.0)
 
 - Activer le toggle des écouteurs et/ou des speakers pour les activer
+
+
+Nous avons oublié de faire le dernier commit lors de la représentation, ils manquent donc les son qui se déclenche sur les tuiles avec un pied rouge dessus.
